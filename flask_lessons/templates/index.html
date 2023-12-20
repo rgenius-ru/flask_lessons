@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>
+    {{ title }}
+</title>
+{% endblock %}
+
+
+{% block body %}
+    <form action = "http://localhost:5000/" method = "post">
+        <p>Enter Name:</p>
+        <p><input type = "text" name = "name" /></p>
+        <div>
+            <input type="checkbox" id="scales1" name="scales1" checked />
+            <label for="scales">Scales 1</label>
+        </div>
+        <div>
+            <input type="checkbox" id="scales2" name="scales2" checked />
+            <label for="scales">Scales 2</label>
+        </div>
+        <div>
+            <input type="checkbox" id="scales3" name="scales3" checked />
+            <label for="scales">Scales 3</label>
+        </div>
+        <p><input type = "submit" value = "Далее" /></p>
+    </form> 
+    <table>
+        <tr>
+            <th>Город</th>
+            <th>Цена</th>
+          </tr>
+        {% for city, price in cities.items() %}
+          <tr>
+            <td>{{ city }}</td>
+            <td>{{ price }}</td>
+          </tr>
+        {% endfor %}
+      </table>  
+{% endblock %}
