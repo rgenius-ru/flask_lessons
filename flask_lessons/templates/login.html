@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>
+    {{ content['title'] }}
+</title>
+{% endblock %}
+
+
+{% block body %}
+    <form action = "http://localhost:5000/login" method = "post">
+        <p>Enter Login:</p>
+        <p><input type = "text" name = "username" /></p>
+        <p><input type = "text" name = "password" /></p>
+        <p><input type = "submit" value = "Далее" /></p>
+        {% if error_keypare != '' %}
+          {{ content['error_keypare'] }}
+        {% endif %}
+    </form> 
+
+{% endblock %}
